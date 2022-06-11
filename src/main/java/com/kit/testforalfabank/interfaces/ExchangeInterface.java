@@ -8,10 +8,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Headers("Content-Type: application/json")
 public interface ExchangeInterface {
 
-    @RequestMapping(value = "historical/{today_date}.json?app_id={app_id}&base={base_currency}",
+    @RequestMapping(value = "latest.json?app_id={app_id}&base={base_currency}",
             method = RequestMethod.GET)
     String todayRates(
-            @PathVariable(value = "today_date") String today_date,
             @PathVariable(value = "app_id") String app_id,
             @PathVariable(value = "base_currency") String base_currency);
 

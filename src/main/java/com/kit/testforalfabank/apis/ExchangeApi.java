@@ -37,12 +37,7 @@ public class ExchangeApi {
     }
 
     public BigDecimal getTodayRates() {
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
-                .withZone(ZoneId.systemDefault()); // PATTERN FOR DATE
-
-        String formattedTodayDate = dateTimeFormatter.format(MyConstants.TODAY_DATE);
-
-        String todayRates = exchangeInterface.todayRates(formattedTodayDate,
+        String todayRates = exchangeInterface.todayRates(
                 MyConstants.KEY_FOR_EXCHANGE, MyConstants.BASE_CURRENCY);
 
         JSONObject jsonObject = new JSONObject(todayRates);
